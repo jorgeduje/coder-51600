@@ -1,5 +1,7 @@
 import { BsFillCartCheckFill } from "react-icons/bs";
-const CartWidget = () => {
+
+const CartWidget = ({numero}) => {
+  
   return (
     <div>
       <span>0</span>

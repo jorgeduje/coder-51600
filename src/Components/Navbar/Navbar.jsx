@@ -10,9 +10,11 @@ import styles from "./Navbar.module.css";
 import imagen1 from "../../images/zapas.jpg";
 import CartWidget from "../CartWidget/CartWidget";
 
-const Navbar = () => {
+const Navbar = ({children}) => {
+  let numero = 12
   return (
-    <div className={styles.containerNavbar}>
+    <div>
+      <div className={styles.containerNavbar}>
       {/* DESDE UNA URL EXTERNA */}
       <img
         src="https://res.cloudinary.com/dnqfh2chg/image/upload/v1676739967/images_fvvncx.jpg"
@@ -28,7 +30,9 @@ const Navbar = () => {
         <li>Urbanas</li>
         <li>Deportivas</li>
       </ul>
-      <CartWidget />
+      <CartWidget numero={numero} />
+    </div>
+      {children}
     </div>
   );
 };
