@@ -13,16 +13,12 @@ import CartWidget from "../CartWidget/CartWidget";
 const Navbar = () => {
   return (
     <div className={styles.containerNavbar}>
-      {/* DESDE UNA URL EXTERNA */}
       <img
         src="https://res.cloudinary.com/dnqfh2chg/image/upload/v1676739967/images_fvvncx.jpg"
         alt=""
-        style={{width: "10%", objectFit: "cover"}}
+        style={{ width: "10%", objectFit: "cover" }}
       />
-      {/* DESDE SRC */}
-      {/* <img src={imagen1} alt="" /> */}
-      {/* DESDE PUBLIC */}
-      {/* <img src="/images/logo512.png" alt="" /> */}
+
       <ul className={styles.containerList}>
         <li>Todas</li>
         <li>Urbanas</li>
