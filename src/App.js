@@ -9,10 +9,7 @@ function App() {
       <Navbar>
         <Footer>
           <ItemListContainer greeting={"Hola como esta"} />
-          {/* ProductCard( "hola" ) */}
           <ProductCard title={"Producto uno"} price={200} isRed={false} />
-          <ProductCard title={"Producto dos"} price={500} isRed={true} />
-          <ProductCard title={"Producto tres"} isRed={true} />
         </Footer>
       </Navbar>
     </div>
