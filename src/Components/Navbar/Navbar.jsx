@@ -10,7 +10,8 @@ import styles from "./Navbar.module.css";
 import imagen1 from "../../images/zapas.jpg";
 import CartWidget from "../CartWidget/CartWidget";
 
-const Navbar = () => {
+const Navbar = ({children}) => {
+  let numero = 12
   return (
     <div className={styles.containerNavbar}>
       <img
@@ -24,8 +25,9 @@ const Navbar = () => {
         <li>Urbanas</li>
         <li>Deportivas</li>
       </ul>
-      <CartWidget />
+      <CartWidget numero={numero} />
     </div>
+    
   );
 };
 
