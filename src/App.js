@@ -1,20 +1,21 @@
-import Footer from "./Components/Footer/Footer";
-import ItemListContainer from "./Components/ItemListContainer/ItemListContainer";
-import Navbar from "./Components/Navbar/Navbar";
-import ProductCard from "./Components/ProductCard/ProductCard";
+import { Typography } from "@mui/material";
+import CustomCard from "./Components/CustomCard/CustomCard";
+import CustomNavbar from "./Components/CustomNavbar/CustomNavbar";
+import Main from "./Components/Main/Main";
+import PruebasMUI from "./Components/PruebasMUI/PruebasMUI";
 
 function App() {
   return (
     <div>
-      <Navbar>
-        <Footer>
-          <ItemListContainer greeting={"Hola como esta"} />
-          <ProductCard title={"Producto uno"} price={200} isRed={false} />
-        </Footer>
-      </Navbar>
+      <CustomNavbar />
+      <Main />
+      <Typography variant="h2" align="center" color="primary">
+        Aca el nombre de la empresa
+      </Typography>
+      <CustomCard title="titulo 1" />
+      <PruebasMUI />
     </div>
   );
 }
 
 export default App;
-
