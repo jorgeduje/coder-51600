@@ -12,7 +12,7 @@ const Navbar = ({ children }) => {
         <img
           src="https://res.cloudinary.com/dnqfh2chg/image/upload/v1676739967/images_fvvncx.jpg"
           alt=""
-          style={{ width: "10%", objectFit: "cover" }}
+          style={{ width: "10%", objectFit: "cover", height: "10vh" }}
         />
 
         <ul className={styles.containerList}>
