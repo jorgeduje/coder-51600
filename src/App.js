@@ -19,9 +19,9 @@ function App() {
     <div>
       <Navbar>
         <Footer>
-          {/* <ItemListContainer /> */}
+          <ItemListContainer />
           {/* <ProductCard title={title} price={200} isRed={false} login={login} /> */}
-          <ItemCount stock={stock} initial={initial} onAdd={onAdd} />
+          {/* <ItemCount stock={stock} initial={initial} onAdd={onAdd} /> */}
         </Footer>
       </Navbar>
     </div>

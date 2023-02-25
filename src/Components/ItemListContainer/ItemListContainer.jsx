@@ -1,42 +1,33 @@
-
 import { useState, useEffect } from "react";
+import { products } from "../../productsMock";
+import ItemList from "../ItemList/ItemList";
+
 
 const ItemListContainer = () => {
+  const [items, setItems] = useState([]);
 
-  const [ nombre , setNombre ] = useState("pepito")
-  const [ contador , setContador ] = useState(0)
+  useEffect(() => {
+    const productList = new Promise((resolve, reject) => {
+      resolve(products);
+      // reject("lo siento, no tienes autorizacion")
+    });
 
-  const cambiarContador = ()=>{
-    setContador( contador + 1)
-  }
+    productList
+      .then((res) => {
+        setItems(res);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
 
-  const cambiarNombreMaria = ()=>{
-    setNombre("maria")
-  }
-  const cambiarNombrePepito = ()=>{
-    setNombre("pepito")
-  }
+  console.log(items);
 
-  useEffect( ()=>{
-    setNombre("carmen")
-    console.log("me ejecute una sola vez") // HACEMOS UNA LLAMADA A UN BACKEND ( PESADO )
-
-  }, [] ) // ARREGLO DE DEPENDENCIAS VACIO
-
-  // useEffect( ()=>{
-
-  //   console.log( "me ejecuto cada vez que cambia algo" )
-
-  // }, [contador]) // ARREGLO DE DEPENDENCIAS A LA ESCUCHA DE UNA VARIABLE
-
-
-  // console.log("me ejecute fuera del effect")
   return (
     <div>
-        <h1>Hola {nombre} como estas?</h1>
-        <button onClick={cambiarNombreMaria}>Cambiar a maria</button>
-        <button onClick={cambiarNombrePepito}>Cambiar a pepit</button>
-        <button onClick={cambiarContador}>Cambiar contador</button>
+      
+      <ItemList items={items}  />
+      
     </div>
   );
 };
