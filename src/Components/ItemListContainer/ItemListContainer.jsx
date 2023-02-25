@@ -23,6 +23,8 @@ const ItemListContainer = () => {
 
   console.log(items);
 
+  
+
   return (
     <div>
       
