@@ -9,7 +9,6 @@ const ItemListContainer = () => {
   useEffect(() => {
     const productList = new Promise((resolve, reject) => {
       resolve(products);
-      // reject("lo siento, no tienes autorizacion")
     });
 
     productList
@@ -20,10 +19,6 @@ const ItemListContainer = () => {
         console.log(error);
       });
   }, []);
-
-  console.log(items);
-
-  
 
   return (
     <div>

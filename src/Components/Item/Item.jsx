@@ -11,22 +11,31 @@ import Typography from "@mui/material/Typography";
 
 const Item = ({ element }) => {
   return (
-    <Card sx={{ width: 345, height: 300 }}>
+    <Card
+      sx={{
+        width: 345,
+        height: 350,
+        backgroundColor: "black",
+        color: "white",
+        border: "1px solid black",
+        borderRadius: "10px",
+        boxShadow: "0px 0px 10px black",
+      }}
+    >
       <CardMedia
-        sx={{ height: 140 }}
+        sx={{ height: 160, backgroundColor: "whitesmoke" }}
         image={element.img}
         title="green iguana"
       />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
+      <CardContent sx={{ height: 130}}>
+        <Typography gutterBottom variant="h5" component="div" align="center">
           {element.title}
         </Typography>
-        <Typography variant="body2" color="text.secondary">
-          {element.description}
-        </Typography>
+        <Typography variant="body2">{element.description}</Typography>
+        <Typography variant="body">${element.price}.-</Typography>
       </CardContent>
       <CardActions>
-        <Button size="small" variant="contained" color="secondary">
+        <Button size="small" variant="contained" color="primary">
           Ver detalle
         </Button>
       </CardActions>

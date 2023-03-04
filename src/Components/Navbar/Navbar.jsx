@@ -1,6 +1,4 @@
-
 import styles from "./Navbar.module.css";
-
 
 import CartWidget from "../CartWidget/CartWidget";
 
@@ -9,16 +7,12 @@ const Navbar = ({ children }) => {
   return (
     <div>
       <div className={styles.containerNavbar}>
-        <img
-          src="https://res.cloudinary.com/dnqfh2chg/image/upload/v1676739967/images_fvvncx.jpg"
-          alt=""
-          style={{ width: "10%", objectFit: "cover", height: "10vh" }}
-        />
+        <h3 style={{color: "#e1d4c7"}}>Comision: 51600</h3>
 
         <ul className={styles.containerList}>
-          <li>Todas</li>
-          <li>Urbanas</li>
-          <li>Deportivas</li>
+          <li className={styles.navbarItem}>Todas</li>
+          <li className={styles.navbarItem}>Urbanas</li>
+          <li className={styles.navbarItem}>Deportivas</li>
         </ul>
         <CartWidget numero={numero} />
       </div>
