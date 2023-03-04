@@ -9,15 +9,20 @@ const Navbar = ({ children }) => {
   return (
     <div>
       <div className={styles.containerNavbar}>
-        
         <Link to="/" style={{ color: "#e1d4c7", textDecoration: "none" }}>
           Comision: 51600
         </Link>
 
         <ul className={styles.containerList}>
-          <li className={styles.navbarItem}>Todas</li>
-          <li className={styles.navbarItem}>Urbanas</li>
-          <li className={styles.navbarItem}>Deportivas</li>
+          <Link to="/" className={styles.navbarItem}>
+            Todas
+          </Link>
+          <Link to="/category/urbanas" className={styles.navbarItem}>
+            Urbanas
+          </Link>
+          <Link to="/category/deportivas" className={styles.navbarItem}>
+            Deportivas
+          </Link>
         </ul>
         <CartWidget numero={numero} />
       </div>

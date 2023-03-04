@@ -8,23 +8,21 @@ import Navbar from "./Components/Navbar/Navbar";
 function App() {
   return (
     <BrowserRouter>
-
       <Navbar />
 
       <Routes>
+        <Route path="/" element={<ItemListContainer />} />
 
-        <Route path="/" element={ <ItemListContainer /> } />
+        <Route path="/category/:categoryName" element={<ItemListContainer />} />
 
-        <Route path="/cart" element={ <Cart /> } />
+        <Route path="/cart" element={<Cart />} />
 
-        <Route path="/itemDetail/:id" element={ <ItemDetailContainer /> } />
+        <Route path="/itemDetail/:id" element={<ItemDetailContainer />} />
 
         <Route path="/login" element={<Login />} />
 
-        <Route path="*"  element={<h1> error 404: Not found </h1>} />
-
+        <Route path="*" element={<h1> error 404: Not found </h1>} />
       </Routes>
-
     </BrowserRouter>
   );
 }
