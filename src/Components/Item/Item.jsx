@@ -8,6 +8,7 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import { Link } from "react-router-dom";
 
 const Item = ({ element }) => {
   return (
@@ -27,7 +28,7 @@ const Item = ({ element }) => {
         image={element.img}
         title="green iguana"
       />
-      <CardContent sx={{ height: 130}}>
+      <CardContent sx={{ height: 130 }}>
         <Typography gutterBottom variant="h5" component="div" align="center">
           {element.title}
         </Typography>
@@ -35,9 +36,11 @@ const Item = ({ element }) => {
         <Typography variant="body">${element.price}.-</Typography>
       </CardContent>
       <CardActions>
-        <Button size="small" variant="contained" color="primary">
-          Ver detalle
-        </Button>
+        <Link to={`/itemDetail/${element.id}`}>
+          <Button size="small" variant="contained" color="primary">
+            Ver detalle
+          </Button>
+        </Link>
       </CardActions>
     </Card>
   );

@@ -2,12 +2,17 @@ import styles from "./Navbar.module.css";
 
 import CartWidget from "../CartWidget/CartWidget";
 
+import { Link } from "react-router-dom";
+
 const Navbar = ({ children }) => {
   let numero = 12;
   return (
     <div>
       <div className={styles.containerNavbar}>
-        <h3 style={{color: "#e1d4c7"}}>Comision: 51600</h3>
+        
+        <Link to="/" style={{ color: "#e1d4c7" }}>
+          Comision: 51600
+        </Link>
 
         <ul className={styles.containerList}>
           <li className={styles.navbarItem}>Todas</li>
