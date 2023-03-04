@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const ItemCount = ({ stock, initial, onAdd }) => {
+const ItemCount = ({ stock, initial=1, onAdd }) => {
   const [contador, setContador] = useState(initial);
 
   const sumar = () => {
@@ -8,9 +8,6 @@ const ItemCount = ({ stock, initial, onAdd }) => {
       setContador(contador + 1);
     }
   };
-
-  
-
 
   const restar = () => {
     if (contador > 1) {
@@ -20,7 +17,6 @@ const ItemCount = ({ stock, initial, onAdd }) => {
 
   return (
     <div>
-      <h1>Estoy en el itemCount</h1>
 
       <h2>{contador}</h2>
 
@@ -34,11 +30,3 @@ const ItemCount = ({ stock, initial, onAdd }) => {
 };
 
 export default ItemCount;
-
-// // ESTA EN UN LUGAR 
-// const saludar = ( nombre )=>{ // onADD
-//     console.log( `hola ${nombre}` )
-// }
-
-// // ESTA EN OTRO LUGAR
-// saludar( "juancito" ) // onADD( contador )
