@@ -1,0 +1,24 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "title": "Nike 360",
+      "img": "https://res.cloudinary.com/dnqfh2chg/image/upload/v1669326932/free-metcon-4-zapatillas-de-entrenamiento-TQMCZg_fvia3m.png"
+    },
+    {
+      "title": "wilson",
+      "id": "2",
+      "img": "https://res.cloudinary.com/dnqfh2chg/image/upload/v1669430220/rtokwmt3j03bblbfhwhb.jpg"
+    },
+    {
+      "id": "3",
+      "title": "Puma",
+      "img": "https://res.cloudinary.com/dnqfh2chg/image/upload/v1669430165/images_lujpmr.jpg"
+    },
+    {
+      "title": "new balance",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQP1d1HFb4mdyKpvzfBbPCc2ShAg0bgp7PjwQ&usqp=CAU",
+      "id": "I8L4BJZ"
+    }
+  ]
+}

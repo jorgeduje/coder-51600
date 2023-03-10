@@ -4,6 +4,7 @@ import ItemDetailContainer from "./Components/ItemDetailContainer/ItemDetailCont
 import ItemListContainer from "./Components/ItemListContainer/ItemListContainer";
 import Login from "./Components/Login/Login";
 import Navbar from "./Components/Navbar/Navbar";
+import ProductsBack from "./Components/ProductsBack/ProductsBack";
 
 function App() {
   return (
@@ -20,6 +21,8 @@ function App() {
         <Route path="/itemDetail/:id" element={<ItemDetailContainer />} />
 
         <Route path="/login" element={<Login />} />
+
+        <Route path="/productsBack" element={ <ProductsBack /> } />
 
         <Route path="*" element={<h1> error 404: Not found </h1>} />
       </Routes>
