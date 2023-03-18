@@ -45,11 +45,6 @@ const CartContextProvider = ({ children }) => {
       return acc + elemento.quantity
     } , 0 )
 
-    // let total = 0;
-    // for (let i = 0; i < cart.length; i++) {
-    //   total += cart[i];
-    // }
-    // return total;
   };
 
   // OBTENER EL PRECIO TOTAL DEL CARRITO
