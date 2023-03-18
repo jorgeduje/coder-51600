@@ -2,10 +2,27 @@ import { Button } from "@mui/material";
 import React, { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
 import "./Cart.css";
+import Swal from "sweetalert2";
 const Cart = () => {
-  const { cart, clearCart, getTotalPrice } = useContext(CartContext);
+  const { cart, clearCart, getTotalPrice, deleteProductById } =
+    useContext(CartContext);
 
-  const precioTotal = getTotalPrice();
+  const clear = () => {
+    Swal.fire({
+      title: "Seguro que quieres vaciar el carrito?",
+      showDenyButton: true,
+      showCancelButton: true,
+      confirmButtonText: "Si, vaciar",
+      denyButtonText: `No, no vaciar`,
+    }).then((result) => {
+      if (result.isConfirmed) {
+        clearCart();
+        Swal.fire("Carrito vaciado exitosamente", "", "success");
+      } else if (result.isDenied) {
+        Swal.fire("El carrito queda como estaba", "", "info");
+      }
+    });
+  };
 
   return (
     <div className="cart-container">
@@ -18,6 +35,13 @@ const Cart = () => {
                 <h2>{item.name}</h2>
                 <h2>${item.price}.-</h2>
                 <h2>Unidades: {item.quantity}</h2>
+                <Button
+                  color="secondary"
+                  variant="contained"
+                  onClick={() => deleteProductById(item.id)}
+                >
+                  Elimiar
+                </Button>
               </div>
             </div>
           );
@@ -31,7 +55,7 @@ const Cart = () => {
         {cart.length > 0 && (
           <div className="btn-cart">
             <Button variant="contained">Comprar</Button>
-            <Button onClick={() => clearCart()} variant="contained">
+            <Button onClick={clear} variant="contained">
               Vaciar carrito
             </Button>
           </div>

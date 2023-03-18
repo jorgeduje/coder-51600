@@ -1,9 +1,13 @@
 import { Button } from "@mui/material";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./ItemCount.css"
 
 const ItemCount = ({ stock, initial=1, onAdd }) => {
   const [contador, setContador] = useState(initial);
+
+  // useEffect(()=>{
+  //   setContador(initial)
+  // }, [initial])
 
   const sumar = () => {
     if (contador < stock) {
