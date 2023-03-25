@@ -22,8 +22,9 @@ const Navbar = ({ children }) => {
         };
       });
       setCategoryList(arrayCategories);
+      // ESTO ES NUEVO
       const firstCat = categoryList.length > 0 && categoryList.find(e => e.title === "Todas")
-      const otherCat =  categoryList.filter(e => e.title !== "Todas")
+      const otherCat = categoryList.length > 0 &&  categoryList.filter(e => e.title !== "Todas")
       if(categoryList.length > 0){
         setCate([firstCat, ...otherCat])
       }
