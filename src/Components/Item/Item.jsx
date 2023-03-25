@@ -1,6 +1,5 @@
 import React from "react";
 
-import styles from "./Item.module.css";
 
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";

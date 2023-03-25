@@ -50,7 +50,6 @@ const ItemDetailContainer = () => {
   };
 
   let quantity = getQuantityById(Number(id))
-  console.log(quantity)
 
   return (
     <div className={"containerItemDetail"}>
