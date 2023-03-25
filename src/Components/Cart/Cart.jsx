@@ -4,11 +4,13 @@ import { CartContext } from "../../context/CartContext";
 import "./Cart.css";
 import Swal from "sweetalert2";
 import FormCheckout from "../FormCheckout/FormCheckout";
+import { Link } from "react-router-dom";
 const Cart = () => {
   const { cart, clearCart, getTotalPrice, deleteProductById } =
     useContext(CartContext);
 
   const [showForm, setShowForm] = useState(false);
+  const [orderId, setOrderId] = useState(null)
 
   const clear = () => {
     Swal.fire({
@@ -26,6 +28,16 @@ const Cart = () => {
       }
     });
   };
+
+  if(orderId){
+    return (
+      <div>
+        <h2>Gracias por su compra</h2>
+        <h4>el comprobante es : {orderId}</h4>
+        <Link to="/">Seguir comprando</Link>
+      </div>
+    )
+  }
 
   return (
     <div>
@@ -70,7 +82,7 @@ const Cart = () => {
           </div>
         </div>
       ) : (
-        <FormCheckout cart={cart} getTotalPrice={getTotalPrice} />
+        <FormCheckout cart={cart} getTotalPrice={getTotalPrice} setOrderId={setOrderId} clearCart={clearCart} />
       )}
     </div>
   );

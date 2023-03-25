@@ -1,33 +1,36 @@
 import React, { useState } from "react";
 
-// import { addDoc, collection } from "firebase/firestore"
-// import { db } from "../../firebaseConfig";
+import { addDoc, collection, updateDoc, doc } from "firebase/firestore";
+import { db } from "../../firebaseConfig";
 
-const FormCheckout = ({cart, getTotalPrice}) => {
+const FormCheckout = ({ cart, getTotalPrice, setOrderId, clearCart }) => {
   const [userData, setUserData] = useState({
     name: "",
     email: "",
     phone: "",
   });
 
-  const handleSubmit = (e)=>{
-    e.preventDefault()
-
-    let total = getTotalPrice()
-
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    let total = getTotalPrice();
     let order = {
-        buyer: userData,
-        items: cart,
-        total
-    }
+      buyer: userData,
+      items: cart,
+      total,
+    };
+    let orderCollection = collection(db, "orders");
+    addDoc(orderCollection, order)
+      .then((res) => {
+        setOrderId(res.id);
+        clearCart();
+      })
+      .catch((err) => console.log(err));
 
-    // let orderCollection = collection( db, "orders" )
-    // addDoc(orderCollection, order)
-    //     .then(res => console.log(res.id))
-    //     .catch(err => console.log( err ))
-
-
-  }
+    cart.map((product) => {
+      let refDoc = doc(db, "products", product.id);
+      updateDoc(refDoc, { stock: product.stock - product.quantity });
+    });
+  };
 
   return (
     <div>
