@@ -10,7 +10,6 @@ import { db } from "../../firebaseConfig";
 
 const Navbar = ({ children }) => {
   const [categoryList, setCategoryList] = useState([]);
-  const [cate, setCate] = useState([]);
 
   useEffect(() => {
     const itemsCollection = collection(db, "categories");
@@ -22,16 +21,8 @@ const Navbar = ({ children }) => {
         };
       });
       setCategoryList(arrayCategories);
-      // ESTO ES NUEVO
-      const firstCat = categoryList.length > 0 && categoryList.find(e => e.title === "Todas")
-      const otherCat = categoryList.length > 0 &&  categoryList.filter(e => e.title !== "Todas")
-      if(categoryList.length > 0){
-        setCate([firstCat, ...otherCat])
-      }
     });
-
-  
-  }, [categoryList]);
+  }, []);
 
   return (
     <div>
@@ -41,7 +32,7 @@ const Navbar = ({ children }) => {
         </Link>
 
         <ul className={styles.containerList}>
-          {cate?.map((category) => {
+          {categoryList?.map((category) => {
             return (
               <Link
                 key={category.id}
